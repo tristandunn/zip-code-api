@@ -1,0 +1,5 @@
+!.ruby-version
+.jekyll-cache/
+_site/
+.jekyll-metadata
+_data/raw.json

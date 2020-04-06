@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+curl -s "https://public.opendatasoft.com/explore/dataset/us-zip-code-latitude-and-longitude/download/?format=json&timezone=UTC&lang=en" 2>&1 | \
+  jq "map({ city: .fields.city, latitude: .fields.latitude, longitude: .fields.longitude, timezone: { dst: (.fields.dst == 1), offset: .fields.timezone }, state: .fields.state, zip: .fields.zip })" > _data/zipcodes.json
